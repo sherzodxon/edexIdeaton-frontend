@@ -1,4 +1,4 @@
-const BASE = process.env.NEXT_PUBLIC_API_URL ;
+const BASE = "https://edexideaton-backend.onrender.com";
 
 function getToken() {
   if (typeof window === 'undefined') return null;
