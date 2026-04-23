@@ -1,0 +1,10 @@
+node_modules/
+
+# Next.js build va kesh fayllari
+.next/
+out/
+build/
+
+# Loglar va muhit o'zgaruvchilari
+*.log
+.env*
