@@ -269,43 +269,7 @@ export default function LeaderboardPage() {
       </header>
 
       <main style={{ margin: '0 auto', padding: '40px 24px' }}>
-        {/* Top 3 podium */}
-        {!loading && schools.filter(s => s.total_points > 0).length >= 3 && (
-          <div style={{ marginBottom: 48 }}>
-            <h2 style={{ textAlign: 'center', fontSize: 13, letterSpacing: 3, color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: 32 }}>
-              Yetakchilar
-            </h2>
-            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'center', gap: 12 }}>
-              {[schools[1], schools[0], schools[2]].map((school, i) => {
-                const realRank = i === 0 ? 2 : i === 1 ? 1 : 3;
-                const heights = [120, 160, 100];
-                const colors = ['var(--silver)', 'var(--gold)', 'var(--bronze)'];
-                return (
-                  <div key={school?.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
-                    <div style={{ fontSize: realRank === 1 ? 32 : 24 }}>{getMedalEmoji(realRank)}</div>
-                    <div style={{ textAlign: 'center', padding: '0 12px', maxWidth: 160 }}>
-                      <div style={{ fontFamily: 'Syne', fontWeight: 700, fontSize: realRank === 1 ? 15 : 13, color: 'var(--text)' }}>
-                        {school?.name}
-                      </div>
-                      <div style={{ fontFamily: 'Syne', fontWeight: 800, fontSize: realRank === 1 ? 28 : 22, color: colors[i], marginTop: 4 }}>
-                        {school?.total_points}
-                      </div>
-                    </div>
-                    <div style={{
-                      width: realRank === 1 ? 140 : 110,
-                      height: heights[i],
-                      background: `linear-gradient(180deg, ${colors[i]}22, ${colors[i]}08)`,
-                      border: `1px solid ${colors[i]}44`,
-                      borderRadius: '10px 10px 0 0',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontFamily: 'Syne', fontWeight: 800, fontSize: 28, color: colors[i],
-                    }}>{realRank}</div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
+       
 
         {/* Rankings */}
         <div>
