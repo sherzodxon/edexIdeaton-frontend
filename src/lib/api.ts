@@ -1,4 +1,7 @@
 const BASE = "https://edexideaton-backend.onrender.com";
+// const BASE = "http://localhost:4000"
+
+
 
 function getToken() {
   if (typeof window === 'undefined') return null;
@@ -22,8 +25,8 @@ export const api = {
   login: (username: string, password: string) =>
     apiFetch('/api/auth/login', { method: 'POST', body: JSON.stringify({ username, password }) }),
 
-  getRecentActivity: () =>
-    apiFetch('/api/schools/recent-activity'),
+  getSchoolCurrentScores: (schoolId: number) =>
+    apiFetch(`/api/schools/${schoolId}/current-scores`),
 
   getLeaderboard: () =>
     apiFetch('/api/schools/leaderboard'),
